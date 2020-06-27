@@ -1,29 +1,52 @@
 package com.api.testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import io.restassured.RestAssured;
+import com.api.base.BaseTest;
+import com.api.utilities.DataUtil;
+
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.*;
 
-public class CreateCustomerTest {
+public class CreateCustomerTest extends BaseTest{
 
-	@Test
-	public void validateCreateCustomerAPIWithValidSecretKey() {
+	@Test(dataProviderClass=DataUtil.class,dataProvider="data")
+	public void validateCreateCustomerAPI(String email,String name,String address,String description) {
 
-		RestAssured.baseURI="https://api.stripe.com";
-		RestAssured.basePath="/v1";
-
-		Response response=given().auth().basic("sk_test_51GwOcBEfDaDbVM7GZQW0dpgCvhTKdUSTtdL8HUysqxbgeNMaXkJPtcJAbZp6c3IB7WZszCP3u5iVXY0DggHLMvpK00tsaj0VaA", "")
-				.formParam("email","rahulg1234@gmail.com")
-				.formParam("name","Rahul Kumar Gupta")
-				.formParam("address[line1]","#34 main road Bangalore")
-				.formParam("description","This is post request - customer Creation")
+		Response response=given().auth().basic(prop.getProperty("validSecretKey"), "")
+				.formParam("email",email)
+				.formParam("name",name)
+				.formParam("address[line1]",address)
+				.formParam("description",description)
 				.post("/customers");
 
 		response.prettyPrint();
 		System.out.println("Status Code : "+response.statusCode());
+
+		//Validation
+		Assert.assertEquals(response.statusCode(), 200);
 	}
+
+
+	@Test(dataProviderClass=DataUtil.class,dataProvider="data")
+	public void invalidateCreateCustomerAPI(String email,String name,String address,String description) {
+
+		Response response=given().auth().basic(prop.getProperty("invalidSecretKey"), "")
+				.formParam("email",email)
+				.formParam("name",name)
+				.formParam("address[line1]",address)
+				.formParam("description",description)
+				.post("/customers");
+
+		response.prettyPrint();
+		System.out.println("Status Code : "+response.statusCode());
+
+		//Validation
+		Assert.assertEquals(response.statusCode(), 200);
+	}
+
+
 
 }
