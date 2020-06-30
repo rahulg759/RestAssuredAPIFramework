@@ -14,7 +14,7 @@ import io.restassured.RestAssured;
 
 public class BaseTest {
 
-	public Properties prop=new Properties();;
+	public static  Properties prop=new Properties();;
 	private FileInputStream fis;
 	public static ExcelReader excel=new ExcelReader(".\\src\\test\\resources\\excel\\testdata.xlsx");
 
