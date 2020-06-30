@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.api.base.BaseTest;
+import com.api.frameworkapis.CreateCustomerAPI;
 import com.api.utilities.DataUtil;
 
 import io.restassured.response.Response;
@@ -17,12 +18,7 @@ public class CreateCustomerTest extends BaseTest{
 	@Test(dataProviderClass=DataUtil.class,dataProvider="readdata")
 	public void validateCreateCustomerAPIWithValidSecretKey(Hashtable<String,String> data) {
 
-		Response response=given().auth().basic(prop.getProperty("validSecretKey"), "")
-				.formParam("email",data.get("email"))
-				.formParam("name",data.get("name"))
-				.formParam("address[line1]",data.get("address"))
-				.formParam("description",data.get("description"))
-				.post(prop.getProperty("customerAPIEndPoint"));
+		Response response=CreateCustomerAPI.sendPostRequesttoCreateCustomerAPIWithValidAuthKey(data);
 
 		response.prettyPrint();
 		System.out.println("Status Code : "+response.statusCode());
@@ -32,22 +28,17 @@ public class CreateCustomerTest extends BaseTest{
 	}
 
 
-	/*@Test(dataProviderClass=DataUtil.class,dataProvider="data")
-	public void invalidateCreateCustomerAPI(String email,String name,String address,String description) {
+	@Test(dataProviderClass=DataUtil.class,dataProvider="readdata")
+	public void validateCreateCustomerAPIWithInValidSecretKey(Hashtable<String,String> data) {
 
-		Response response=given().auth().basic(prop.getProperty("invalidSecretKey"), "")
-				.formParam("email",email)
-				.formParam("name",name)
-				.formParam("address[line1]",address)
-				.formParam("description",description)
-				.post("/customers");
+		Response response=CreateCustomerAPI.sendPostRequesttoCreateCustomerAPIWithInValidAuthKey(data);
 
 		response.prettyPrint();
 		System.out.println("Status Code : "+response.statusCode());
 
 		//Validation
 		Assert.assertEquals(response.statusCode(), 200);
-	}*/
+	}
 
 
 
