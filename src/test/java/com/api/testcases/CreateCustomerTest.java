@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import com.api.base.BaseTest;
 import com.api.frameworkapis.CreateCustomerAPI;
+import com.api.listeners.ExtentListeners;
 import com.api.utilities.DataUtil;
 
 import io.restassured.response.Response;
@@ -19,7 +20,10 @@ public class CreateCustomerTest extends BaseTest{
 	public void validateCreateCustomerAPIWithValidSecretKey(Hashtable<String,String> data) {
 
 		Response response=CreateCustomerAPI.sendPostRequesttoCreateCustomerAPIWithValidAuthKey(data);
-
+		
+		//Added customized log from extent report class
+		//ExtentListeners.testReport.get().info(data.toString());
+		
 		response.prettyPrint();
 		System.out.println("Status Code : "+response.statusCode());
 
