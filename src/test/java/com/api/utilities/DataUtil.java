@@ -11,7 +11,8 @@ import com.api.base.BaseTest;
 
 public class DataUtil extends BaseTest {
 
-	@DataProvider(name="readdata")
+	//Reduce the time use parellel 
+	@DataProvider(name="readdata",parallel=true)
 	public static Object[][] getData(Method m) {
 
 		int row=excel.getRowCount(prop.getProperty("testdatasheet"));
