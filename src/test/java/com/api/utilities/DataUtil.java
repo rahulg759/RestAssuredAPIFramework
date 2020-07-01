@@ -27,7 +27,7 @@ public class DataUtil extends BaseTest {
 		for (testcaseNum = 1; testcaseNum <= row; testcaseNum++) {
 
 			String testcaseName = excel.getCellData(prop.getProperty("testdatasheet"), 0, testcaseNum);
-			System.out.println("hi"+testcaseName);
+		
 			if (testcaseName.equalsIgnoreCase(testName)) {
 				break;
 			}

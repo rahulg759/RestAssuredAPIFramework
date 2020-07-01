@@ -22,41 +22,41 @@ public class ExtentListeners implements ITestListener {
 	static Date d = new Date();
 	static String fileName = "Extent_" + d.toString().replace(":", "_").replace(" ", "_") + ".html";
 
-	private static ExtentReports extent = ExtentManager.createInstance(System.getProperty("user.dir")+"\\reports\\"+fileName);
-	
+	private static ExtentReports extent = ExtentManager.createInstance(System.getProperty("user.dir")+"\\extentreports\\"+fileName);
+
 	public static ThreadLocal<ExtentTest> testReport = new ThreadLocal<ExtentTest>();
-	
+
 
 	public void onTestStart(ITestResult result) {
 
-	
+
 		ExtentTest test = extent.createTest(result.getTestClass().getName()+"     @TestCase : "+result.getMethod().getMethodName());
-        testReport.set(test);
-        
+		testReport.set(test);
+
 
 	}
 
 	public void onTestSuccess(ITestResult result) {
 
-		
+
 		String methodName=result.getMethod().getMethodName();
 		String logText="<b>"+"TEST CASE:- "+ methodName.toUpperCase()+ " PASSED"+"</b>";		
 		Markup m=MarkupHelper.createLabel(logText, ExtentColor.GREEN);
 		testReport.get().pass(m);
-		
+
 
 	}
 
 	public void onTestFailure(ITestResult result) {
 
-	
-		
-		
+		//Will print the log on extent report
+		testReport.get().fail(result.getThrowable().getMessage().toString());
+
 		String excepionMessage=Arrays.toString(result.getThrowable().getStackTrace());
 		testReport.get().fail("<details>" + "<summary>" + "<b>" + "<font color=" + "red>" + "Exception Occured:Click to see"
 				+ "</font>" + "</b >" + "</summary>" +excepionMessage.replaceAll(",", "<br>")+"</details>"+" \n");
-		
-	/*	try {
+
+		/*	try {
 
 			ExtentManager.captureScreenshot();
 			testReport.get().fail("<b>" + "<font color=" + "red>" + "Screenshot of failure" + "</font>" + "</b>",
@@ -65,7 +65,7 @@ public class ExtentListeners implements ITestListener {
 		} catch (IOException e) {
 
 		}*/
-		
+
 		String failureLogg="TEST CASE FAILED";
 		Markup m = MarkupHelper.createLabel(failureLogg, ExtentColor.RED);
 		testReport.get().log(Status.FAIL, m);
@@ -87,7 +87,7 @@ public class ExtentListeners implements ITestListener {
 
 	public void onStart(ITestContext context) {
 
-		
+
 
 	}
 

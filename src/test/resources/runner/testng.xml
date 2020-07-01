@@ -11,9 +11,11 @@
 			<class name="com.api.testcases.CreateCustomerTest" />
 		</classes>
 	</test> <!-- Test -->
+	
 	<test name="Delete Customer API Test">
 		<classes>
 			<class name="com.api.testcases.DeleteCustomerTest" />
 		</classes>
 	</test> <!-- Test -->
+	
 </suite> <!-- Suite -->
