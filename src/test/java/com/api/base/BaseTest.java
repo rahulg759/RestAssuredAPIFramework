@@ -36,7 +36,9 @@ public class BaseTest {
 		}
 
 		RestAssured.baseURI = prop.getProperty("baseURI");
-		RestAssured.basePath =prop.getProperty("basePath");
+		
+		//It's base path of stripe
+		//RestAssured.basePath =prop.getProperty("basePath");
 	}
 
 	@AfterSuite

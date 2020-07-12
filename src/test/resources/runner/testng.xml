@@ -8,13 +8,13 @@
 
 	<test name="Create Customer API Test">
 		<classes>
-			<class name="com.api.testcases.CreateCustomerTest" />
+			<!-- <class name="com.api.testcases.stripeapis.CreateCustomerTest" /> -->
 		</classes>
 	</test> <!-- Test -->
 	
 	<test name="Delete Customer API Test">
 		<classes>
-			<class name="com.api.testcases.DeleteCustomerTest" />
+			<class name="com.api.testcases.stripeapis.DeleteCustomerTest" />
 		</classes>
 	</test> <!-- Test -->
 	

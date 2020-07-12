@@ -1,11 +1,11 @@
-package com.api.testcases;
+package com.api.testcases.stripeapis;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.api.base.BaseTest;
-import com.api.frameworkapis.CreateCustomerAPI;
 import com.api.listeners.ExtentListeners;
+import com.api.stripeapis.CreateCustomerAPI;
 import com.api.utilities.DataUtil;
 import com.api.utilities.TestUtil;
 

@@ -12,10 +12,7 @@ import com.mongodb.MapReduceCommand.OutputType;
 
 public class ExtentManager {
 
-	private static ExtentReports extent;
-	
-	
-	
+	private static ExtentReports extent;	
 
 	    public static ExtentReports createInstance(String fileName) {
 	        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(fileName);
@@ -28,6 +25,11 @@ public class ExtentManager {
 	        
 	        extent = new ExtentReports();
 	        extent.attachReporter(htmlReporter);
+	        
+	        htmlReporter.config().setDocumentTitle("Automation Report"); // Tittle of Report
+			htmlReporter.config().setReportName("Extent Report V4"); // Name of the report
+			htmlReporter.config().setTheme(Theme.DARK);//Default Theme of Report
+	        
 	        extent.setSystemInfo("Automation Tester", "Rahul Gupta");
 	        extent.setSystemInfo("Organization", "Teksystems India");
 	        extent.setSystemInfo("Build no", "TKI-1234");
