@@ -122,7 +122,7 @@
 				<configuration>
 					<testFailureIgnore> false </testFailureIgnore>
 					<suiteXmlFiles>
-						<suiteXmlFile>src/test/resources/runner/testng.xml</suiteXmlFile>
+						<suiteXmlFile>src/test/resources/runner/testngpaypal.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
