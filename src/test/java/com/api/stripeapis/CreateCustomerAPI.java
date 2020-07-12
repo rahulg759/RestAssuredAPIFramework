@@ -1,4 +1,4 @@
-package com.api.frameworkapis;
+package com.api.stripeapis;
 
 import static io.restassured.RestAssured.given;
 

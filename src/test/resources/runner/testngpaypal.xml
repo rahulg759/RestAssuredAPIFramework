@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests">
+
+	<listeners>
+		<listener class-name="com.api.listeners.ExtentListeners" />
+	</listeners>
+
+	<test name="Create Order API Test">
+		<classes>
+			<class name="com.api.testcases.paypalapis.CreateOrderTest" />
+			<class name="com.api.testcases.paypalapis.GetOrderTest" />
+		</classes>
+	</test> <!-- Test -->
+
+</suite> <!-- Suite -->
