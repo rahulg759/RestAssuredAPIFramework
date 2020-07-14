@@ -8,7 +8,7 @@
 
 	<test name="Create Customer API Test">
 		<classes>
-			<!-- <class name="com.api.testcases.stripeapis.CreateCustomerTest" /> -->
+			<class name="com.api.testcases.stripeapis.CreateCustomerTest" />
 		</classes>
 	</test> <!-- Test -->
 	
