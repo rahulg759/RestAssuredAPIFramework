@@ -1,0 +1,28 @@
+Bullet Points of Project -------->>>>
+==============================================================================
+
+All optional objects in json body is defined to company requirement. Every company is own data so these optional choosen by the company requirement.
+
+For getting API Key ==>>
+stripe.com < dashboard < api keys < secret key (https://dashboard.stripe.com/test/apikeys)
+Bullet Points :
+1- Authentication to the API is performed via HTTP Basic Auth. Provide your API key as the basic auth username value. You do not need to provide a password.
+
+In Postman:
+1 -Authorization < select basic Auth type < give username  secret key (get from dashboard < developers < api keys)
+2 -We can provide optional parameters like email,address line 1 etc in Params. (For post request - create customer)
+3 -If we are getting the status code for post 200 or 201 , its dependend upon developers.
+4 -We can use basic Auth in Header as Authorization with Bearer auth key
+
+Get Auth Key :
+1 -Go to https://stripe.com/docs/api/customers/create (In docs section)
+2 -select customer < create customer < select java from key
+3 -Get API key < select cURL
+
+
+Verification :
+1 -For CRUD operation perfomed in customer apis , we need to validate from customer section in dashboard (https://dashboard.stripe.com/test/apikeys)
+2 -In Customer section (Dashboard) - add one customer id with new btn-
+                                 a)- ctrl + fn + F12 open developers tools.
+								 b)- Go to Network and select ALL
+								 c)- check details of URI and all.

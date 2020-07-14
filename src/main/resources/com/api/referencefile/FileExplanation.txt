@@ -1,0 +1,39 @@
+BaseTest ==>
+
+1)-This File is a parent file of all user defined file.
+2)-We added below -
+        Properties file
+        ExcelReader
+        FileInputStream
+   
+ Note -  For read value fro config.properties file use prop.getProperty("key");
+         Return value from properties file.
+         prop.load(file);
+===========================================================================
+
+Config.properties ==>
+
+Added values as key value pair
+
+===========================================================================
+
+CreateCustomerTest (extends BaseTest)==>>
+
+public static Response sendPostRequesttoCreateCustomerAPIWithValidAuthKey(Hashtable<String,String> data) {
+		Response response=given().auth().basic(prop.getProperty("validSecretKey"), "")
+				.formParam("email",data.get("email"))
+				.formParam("name",data.get("name"))
+				.formParam("address[line1]",data.get("address"))
+				.formParam("description",data.get("description"))
+				.post(prop.getProperty("customerAPIEndPoint"));
+
+		return response;
+	}
+	
+	In the above code we pass the parameters, auth in request and get the response.
+	
+	===========================================================================
+	
+	
+
+        
