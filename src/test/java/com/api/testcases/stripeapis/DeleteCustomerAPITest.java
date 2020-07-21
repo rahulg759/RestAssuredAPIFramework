@@ -14,7 +14,7 @@ import io.restassured.response.Response;
 
 import java.util.Hashtable;
 
-public class DeleteCustomerTest extends BaseTest{
+public class DeleteCustomerAPITest extends BaseTest{
 
 	@Test(dataProviderClass=DataUtil.class,dataProvider="readdata")
 	public void deleteCustomer(Hashtable<String,String> data) {

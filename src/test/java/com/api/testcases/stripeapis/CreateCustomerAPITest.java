@@ -13,7 +13,7 @@ import io.restassured.response.Response;
 
 import java.util.Hashtable;
 
-public class CreateCustomerTest extends BaseTest{
+public class CreateCustomerAPITest extends BaseTest{
 
 
 	// We have to given same name in testdata excel sheet --->>>validateCreateCustomerAPIWithValidSecretKey
@@ -45,7 +45,7 @@ public class CreateCustomerTest extends BaseTest{
 	}
 
 
-	@Test(dataProviderClass=DataUtil.class,dataProvider="readdata")
+	/*@Test(dataProviderClass=DataUtil.class,dataProvider="readdata")
 	public void validateCreateCustomerAPIWithInValidSecretKey(Hashtable<String,String> data) {
 
 		Response response=CreateCustomerAPI.sendPostRequesttoCreateCustomerAPIWithInValidAuthKey(data);
@@ -55,6 +55,6 @@ public class CreateCustomerTest extends BaseTest{
 
 		//Validation
 		Assert.assertEquals(response.statusCode(), 401);
-	}
+	}*/
 
 }

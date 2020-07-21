@@ -8,14 +8,37 @@
 
 	<test name="Create Customer API Test">
 		<classes>
-			<class name="com.api.testcases.stripeapis.CreateCustomerTest" />
+			<class
+				name="com.api.testcases.stripeapis.CreateCustomerAPITest" />
 		</classes>
 	</test> <!-- Test -->
-	
+
 	<test name="Delete Customer API Test">
 		<classes>
-			<class name="com.api.testcases.stripeapis.DeleteCustomerTest" />
+			<class
+				name="com.api.testcases.stripeapis.DeleteCustomerAPITest" />
 		</classes>
 	</test> <!-- Test -->
-	
+
+	<test name="Update Customer API Test">
+		<classes>
+			<class
+				name="com.api.testcases.stripeapis.UpdateCustomerAPITest" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Retrieve Customer API Test">
+		<classes>
+			<class
+				name="com.api.testcases.stripeapis.RetrieveCustomerAPITest" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Retrieve All Customer API Test">
+		<classes>
+			<class
+				name="com.api.testcases.stripeapis.ListAllCustomersAPITest" />
+		</classes>
+	</test> <!-- Test -->
+
 </suite> <!-- Suite -->

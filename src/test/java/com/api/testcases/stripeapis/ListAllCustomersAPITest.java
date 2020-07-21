@@ -7,19 +7,19 @@ import org.testng.annotations.Test;
 
 import com.api.base.BaseTest;
 import com.api.listeners.ExtentListeners;
-import com.api.stripeapis.CreateCustomerAPI;
-import com.api.stripeapis.UpdateCustomerAPI;
+import com.api.stripeapis.ListAllCustomersAPI;
+import com.api.stripeapis.RetrieveCustomerAPI;
 import com.api.utilities.DataUtil;
 import com.api.utilities.TestUtil;
 
 import io.restassured.response.Response;
 
-public class UpdateCustomerAPITest extends BaseTest{
+public class ListAllCustomersAPITest extends BaseTest{
 
 	@Test(dataProviderClass=DataUtil.class,dataProvider="readdata")
-	public void updateCustomer(Hashtable<String,String> data) {
+	public void getAllListCustomerDetails(Hashtable<String,String> data) {
 
-		Response response=UpdateCustomerAPI.sendPostRequesttoUpdateCustomerAPIWithValidAuthKey(data);
+		Response response=ListAllCustomersAPI.sendGetRequesttoRetrieveAllCustomerAPIWithValidAuthKey(data);
 
 		//Added customized log from extent report class
 		ExtentListeners.testReport.get().info(data.toString());
@@ -41,6 +41,4 @@ public class UpdateCustomerAPITest extends BaseTest{
 		System.out.println("Object Key Value : "+TestUtil.getJsonKeyValue(response.asString(), "object"));
 		System.out.println("Name Key Value : "+TestUtil.getJsonKeyValue(response.asString(), "name"));
 	}
-
-
 }

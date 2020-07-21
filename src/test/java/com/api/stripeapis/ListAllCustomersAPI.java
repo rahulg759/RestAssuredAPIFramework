@@ -8,11 +8,11 @@ import com.api.base.BaseTest;
 
 import io.restassured.response.Response;
 
-public class RetrieveCustomerAPI extends BaseTest{
+public class ListAllCustomersAPI extends BaseTest{
 
-	public static Response sendGetRequesttoRetrieveCustomerIDAPIWithValidAuthKey(Hashtable<String,String> data) {
+	public static Response sendGetRequesttoRetrieveAllCustomerAPIWithValidAuthKey(Hashtable<String,String> data) {
 		Response response=given().auth().basic(prop.getProperty("validSecretKey"), "")
-				.get(prop.getProperty("customerAPIEndPoint")+"/"+data.get("id"));
+				.get(prop.getProperty("customerAPIEndPoint"));
 
 		return response;
 	}

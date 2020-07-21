@@ -15,7 +15,7 @@ public class UpdateCustomerAPI extends BaseTest{
 				.formParam("email",data.get("email"))
 				.formParam("name",data.get("name"))
 				.formParam("description",data.get("description"))
-				.post(prop.getProperty("customerAPIEndPoint"));
+				.post(prop.getProperty("customerAPIEndPoint")+"/"+data.get("id"));
 
 		return response;
 	}
