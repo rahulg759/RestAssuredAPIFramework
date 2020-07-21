@@ -6,18 +6,18 @@ BaseTest ==>
         ExcelReader
         FileInputStream
    
- Note -  For read value fro config.properties file use prop.getProperty("key");
+ Note -  For read value from config.properties file use prop.getProperty("key");
          Return value from properties file.
          prop.load(file);
-===========================================================================
+=======================================================================================================================================================
 
 Config.properties ==>
 
 Added values as key value pair
 
-===========================================================================
+=======================================================================================================================================================
 
-CreateCustomerTest (extends BaseTest)==>>
+CreateCustomerAPI (extends BaseTest)==>>
 
 public static Response sendPostRequesttoCreateCustomerAPIWithValidAuthKey(Hashtable<String,String> data) {
 		Response response=given().auth().basic(prop.getProperty("validSecretKey"), "")
@@ -32,7 +32,9 @@ public static Response sendPostRequesttoCreateCustomerAPIWithValidAuthKey(Hashta
 	
 	In the above code we pass the parameters, auth in request and get the response.
 	
-	===========================================================================
+=======================================================================================================================================================
+
+
 	
 	
 

@@ -113,11 +113,11 @@ public class ExtentListeners implements ITestListener, ISuiteListener {
 
 	public void onFinish(ISuite suite) {
 
-		/*try {
-			//	System.out.println("System local host address : "+InetAddress.getLocalHost().getHostAddress());
+		try {
+			System.out.println("System local host address : "+InetAddress.getLocalHost().getHostAddress());
 
 			//Complete address of jenkins extent report
-			//	http://localhost:8080/job/CarsSearchGuideCucumber/Extent_20Report/
+			//http://localhost:8080/job/CarsSearchGuideCucumber/Extent_20Report/
 
 			System.out.println("Jenkins Extent Report Path : ==============>>>>>>");
 			messageBody="http://"+InetAddress.getLocalHost().getHostAddress()+":8080/job/CarsSearchGuideCucumber/Extent_20Report/";
@@ -134,6 +134,6 @@ public class ExtentListeners implements ITestListener, ISuiteListener {
 		} catch (MessagingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
+		}
 	}
 }

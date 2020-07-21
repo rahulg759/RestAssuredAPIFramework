@@ -1,12 +1,9 @@
 package com.api.utilities;
 
 import java.lang.reflect.Method;
-import java.util.HashMap;
 import java.util.Hashtable;
 
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-
 import com.api.base.BaseTest;
 
 public class DataUtil extends BaseTest {

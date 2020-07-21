@@ -11,11 +11,12 @@ import com.api.utilities.TestUtil;
 
 import io.restassured.response.Response;
 
-import static io.restassured.RestAssured.*;
-
 import java.util.Hashtable;
 
 public class CreateCustomerTest extends BaseTest{
+
+
+	// We have to given same name in testdata excel sheet --->>>validateCreateCustomerAPIWithValidSecretKey
 
 	@Test(dataProviderClass=DataUtil.class,dataProvider="readdata")
 	public void validateCreateCustomerAPIWithValidSecretKey(Hashtable<String,String> data) {
@@ -23,7 +24,7 @@ public class CreateCustomerTest extends BaseTest{
 		Response response=CreateCustomerAPI.sendPostRequesttoCreateCustomerAPIWithValidAuthKey(data);
 
 		//Added customized log from extent report class
-		ExtentListeners.testReport.get().info(data.toString());
+		//ExtentListeners.testReport.get().info(data.toString());
 
 		response.prettyPrint();
 		System.out.println("Status Code : "+response.statusCode());
@@ -44,7 +45,7 @@ public class CreateCustomerTest extends BaseTest{
 	}
 
 
-	/*@Test(dataProviderClass=DataUtil.class,dataProvider="readdata")
+	@Test(dataProviderClass=DataUtil.class,dataProvider="readdata")
 	public void validateCreateCustomerAPIWithInValidSecretKey(Hashtable<String,String> data) {
 
 		Response response=CreateCustomerAPI.sendPostRequesttoCreateCustomerAPIWithInValidAuthKey(data);
@@ -53,7 +54,7 @@ public class CreateCustomerTest extends BaseTest{
 		System.out.println("Status Code : "+response.statusCode());
 
 		//Validation
-		Assert.assertEquals(response.statusCode(), 200);
-	}*/
+		Assert.assertEquals(response.statusCode(), 401);
+	}
 
 }

@@ -1,13 +1,8 @@
 package com.api.listeners;
 
-import java.io.File;
-import java.sql.DriverManager;
-import java.util.Date;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.mongodb.MapReduceCommand.OutputType;
 
 
 public class ExtentManager {

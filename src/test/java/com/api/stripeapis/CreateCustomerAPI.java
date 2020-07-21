@@ -3,11 +3,7 @@ package com.api.stripeapis;
 import static io.restassured.RestAssured.given;
 
 import java.util.Hashtable;
-
-import org.testng.Assert;
-
 import com.api.base.BaseTest;
-
 import io.restassured.response.Response;
 
 public class CreateCustomerAPI extends BaseTest{
